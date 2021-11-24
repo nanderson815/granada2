@@ -2,13 +2,13 @@ import React from 'react';
 import Helmet from 'react-helmet';
 
 const SEO_DATA = {
-  description: 'An absurd gatsby starter',
-  title: 'Absurd',
+  description: 'A digital agency in Atlanta, GA.',
+  title: 'Granada Labs',
   url: '',
-  author: 'ajayns',
-  keywords: ['gatsby', 'site', 'absurd'],
+  author: 'noahanderson',
+  keywords: ['software development', 'web design', 'software'],
   img: '',
-  twitterId: '@ajayns_',
+  twitterId: '@nanderson815',
   facebookId: '',
 };
 
