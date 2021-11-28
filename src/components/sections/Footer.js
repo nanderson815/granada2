@@ -52,14 +52,7 @@ const Footer = () => (
         <FooterWrapper>
           <StyledContainer>
             <Copyright>
-              <h2>Absurd</h2>
-              <span>
-                Illustrations by
-                {` `}
-                <ExternalLink href="https://twitter.com/diana_valeanu">
-                  @diana_valeanu
-                </ExternalLink>
-              </span>
+              <h2>Granada Labs</h2>
             </Copyright>
             <SocialIcons>
               {SOCIAL.map(({ icon, link }) => (

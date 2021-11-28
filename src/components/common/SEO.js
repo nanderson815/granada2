@@ -3,7 +3,7 @@ import Helmet from 'react-helmet';
 
 const SEO_DATA = {
   description: 'A digital agency in Atlanta, GA.',
-  title: 'Granada Labs',
+  title: 'Custom Digital Experiences | Granada Labs',
   url: '',
   author: 'noahanderson',
   keywords: ['software development', 'web design', 'software'],

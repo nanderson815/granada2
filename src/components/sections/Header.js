@@ -4,7 +4,6 @@ import { StaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 
 import { Container } from '@components/global';
-import ExternalLink from '@common/ExternalLink';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 
 const Header = () => (
@@ -101,7 +100,7 @@ const Text = styled.div`
   }
 `;
 
-const StyledPageLink = styled.span`
+export const StyledPageLink = styled.span`
   a {
     color: inherit;
     text-decoration: none;

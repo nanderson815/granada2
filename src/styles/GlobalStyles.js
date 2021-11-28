@@ -32,7 +32,7 @@ const GlobalStyles = createGlobalStyle`
     ${props => props.theme.font_size.large};
   }
 
-  p {
+  p, label, input, textarea {
     ${props => props.theme.font_size.regular};
     color: ${props => props.theme.color.black.light};
   }
@@ -61,6 +61,8 @@ const GlobalStyles = createGlobalStyle`
     outline: none;
     padding: 0;
     cursor: pointer;
+    ${props => props.theme.font_size.regular};
+    color: ${props => props.theme.color.black.light};
   }
 
   a {
