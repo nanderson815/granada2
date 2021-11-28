@@ -20,6 +20,7 @@
     "gatsby-plugin-svgr": "^2.0.1",
     "gatsby-source-filesystem": "^2.0.8",
     "gatsby-transformer-sharp": "^2.1.8",
+    "nodemailer": "^6.7.2",
     "prop-types": "^15.6.2",
     "react": "^16.6.3",
     "react-anchor-link-smooth-scroll": "^1.0.11",
