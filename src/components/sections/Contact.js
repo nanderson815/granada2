@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import axios from 'axios';
 
 import { Section, Container } from '@components/global';
 import Input from '@common/Input';
@@ -12,7 +13,7 @@ const Contact = () => (
         Fill out this form to and our team will contact you to schedule a free
         15 minute consultation.
       </h3>
-      <Form
+      {/* <Form
         onSubmit={e => {
           e.preventDefault();
           const email = {};
@@ -21,9 +22,24 @@ const Contact = () => (
               email[ele.name] = ele.value;
             }
           });
-          console.log(email);
+          axios
+            .post('/.netlify/functions/send-email', email)
+            .then(function(response) {
+              console.log(response);
+            })
+            .catch(function(error) {
+              console.log(error);
+            });
         }}
+      > */}
+      <Form
+        method="post"
+        netlify-honeypot="bot-field"
+        data-netlify="true"
+        name="contact"
       >
+        <input type="hidden" name="bot-field" />
+        <input type="hidden" name="form-name" value="contact" />
         <FormGrid>
           <Input label="First Name" name="firstName" required />
           <Input label="Last Name" name="lastName" required />
