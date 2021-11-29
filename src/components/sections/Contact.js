@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import axios from 'axios';
 
 import { Section, Container } from '@components/global';
 import Input from '@common/Input';
