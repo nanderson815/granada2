@@ -60,6 +60,8 @@ export const NavItem = styled.li`
 export const MobileMenu = styled.div`
   width: 100%;
   background: ${props => props.theme.color.primary};
+  height: 100vh;
+  touch-action: none;
 `;
 
 export const Brand = styled.div`
