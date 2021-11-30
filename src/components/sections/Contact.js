@@ -50,10 +50,10 @@ const Contact = () => (
               name="projectBudget"
               displayType="select"
             >
-              <option value="volvo">Hourly (rate varies)</option>
-              <option value="saab">Less than $5,000</option>
-              <option value="opel">$5,000 to $10,000</option>
-              <option value="audi">Over $10,000</option>
+              <option value="hourly">Hourly (rate varies)</option>
+              <option value="Less than $5,000">Less than $5,000</option>
+              <option value="$5,000 to $10,000">$5,000 to $10,000</option>
+              <option value="Over $10,000">Over $10,000</option>
             </Input>
           <FullWidth>
             <Input
