@@ -45,12 +45,21 @@ const Contact = () => (
           <Input label="Email" name="email" required />
           <Input label="Company" name="company" required />
           <Input label="Job Title" name="jobTitle" required />
-          <Input label="Project Budget" name="projectBudget" type="number" />
+            <Input
+              label="Project Budget"
+              name="projectBudget"
+              displayType="select"
+            >
+              <option value="volvo">Hourly (rate varies)</option>
+              <option value="saab">Less than $5,000</option>
+              <option value="opel">$5,000 to $10,000</option>
+              <option value="audi">Over $10,000</option>
+            </Input>
           <FullWidth>
             <Input
               label="What can we help you make?"
               name="message"
-              textArea={true}
+              displayType="textArea"
               required
             />
           </FullWidth>

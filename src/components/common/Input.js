@@ -1,25 +1,35 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-const Input = ({ name, label, required, textArea = false, ...props }) => (
-  <div>
-    <Label htmlFor={name}>
-      {label} {required && '*'}
-    </Label>
-    {textArea ? (
-      <StyledTextAtea id={name} name={name} {...props} required />
-    ) : (
-      <StyledInput id={name} name={name} {...props} required />
-    )}
-  </div>
-);
+const inputSwitcher = displayType => {
+  switch (displayType) {
+    case 'textArea':
+      return StyledTextAtea;
+    case 'select':
+      return StyledSelect;
+    default:
+      return StyledInput;
+  }
+};
+
+const Input = ({ name, label, required, displayType, ...props }) => {
+  const Switched = inputSwitcher(displayType);
+  return (
+    <div>
+      <Label htmlFor={name}>
+        {label} {required && '*'}
+      </Label>
+      <Switched id={name} name={name} {...props} required />
+    </div>
+  );
+};
 
 export default Input;
 
 const sharedStyle = css`
   border: 2px solid ${props => props.theme.color.black.regular};
   border-radius: 5px;
-  line-height: 2.5rem;
+  height: 2.5rem;
   width: 100%;
 `;
 
@@ -29,6 +39,10 @@ const StyledTextAtea = styled.textarea`
 `;
 
 const StyledInput = styled.input`
+  ${sharedStyle}
+`;
+
+const StyledSelect = styled.select`
   ${sharedStyle}
 `;
 

@@ -32,7 +32,7 @@ const GlobalStyles = createGlobalStyle`
     ${props => props.theme.font_size.large};
   }
 
-  p, label, input, textarea {
+  p, label, input, textarea, select {
     ${props => props.theme.font_size.regular};
     color: ${props => props.theme.color.black.light};
   }
