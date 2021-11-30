@@ -31,6 +31,7 @@ const sharedStyle = css`
   border-radius: 5px;
   height: 2.5rem;
   width: 100%;
+  background: ${props => props.theme.color.white.regular};
 `;
 
 const StyledTextAtea = styled.textarea`
