@@ -45,17 +45,19 @@ const Contact = () => (
           <Input label="Email" name="email" required />
           <Input label="Company" name="company" required />
           <Input label="Job Title" name="jobTitle" required />
-            <Input
-              label="Project Budget"
-              name="projectBudget"
-              displayType="select"
-            >
-              <option value="none"></option>
-              <option value="hourly">Hourly (rate varies)</option>
-              <option value="Less than $5,000">Less than $5,000</option>
-              <option value="$5,000 to $10,000">$5,000 to $10,000</option>
-              <option value="Over $10,000">Over $10,000</option>
-            </Input>
+          <Input
+            label="Project Budget"
+            name="projectBudget"
+            displayType="select"
+          >
+            <option disabled selected value="none">
+              -- select an option --
+            </option>
+            <option value="hourly">Hourly (rate varies)</option>
+            <option value="Less than $5,000">Less than $5,000</option>
+            <option value="$5,000 to $10,000">$5,000 to $10,000</option>
+            <option value="Over $10,000">Over $10,000</option>
+          </Input>
           <FullWidth>
             <Input
               label="What can we help you make?"
