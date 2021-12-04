@@ -9,7 +9,7 @@ const Contact = () => (
     <Container>
       <h1>Let's Get In Touch</h1>
       <h3 style={{ marginBottom: 40 }}>
-        Fill out this form to and our team will contact you to schedule a free
+        Fill out this form and our team will contact you to schedule a free
         15 minute consultation.
       </h3>
       {/* <Form

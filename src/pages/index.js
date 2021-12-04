@@ -4,9 +4,9 @@ import Layout from '@common/Layout';
 import Navbar from '@common/Navbar';
 
 import Header from '@sections/Header';
-import About from '@sections/About';
+import Services from '@sections/Services';
 import Brands from '@sections/Brands';
-import Team from '@sections/Team';
+import About from '@sections/About';
 import Contact from '@sections/Contact';
 import Footer from '@sections/Footer';
 
@@ -14,9 +14,9 @@ const IndexPage = () => (
   <Layout>
     <Navbar />
     <Header />
-    <About />
+    <Services />
     <Brands />
-    <Team />
+    <About />
     <Contact />
     <Footer />
   </Layout>

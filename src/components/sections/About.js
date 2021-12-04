@@ -9,34 +9,24 @@ const About = () => (
   <StaticQuery
     query={graphql`
       query {
-        art_fast: file(
-          sourceInstanceName: { eq: "art" }
-          name: { eq: "fast" }
-        ) {
-          childImageSharp {
-            fluid(maxWidth: 760) {
-              ...GatsbyImageSharpFluid_withWebp_tracedSVG
+        allFile(filter: { sourceInstanceName: { eq: "team" } }) {
+          edges {
+            node {
+              relativePath
+              childImageSharp {
+                fluid(maxWidth: 400, maxHeight: 400) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
             }
           }
         }
-
-        art_learn: file(
+        art_team: file(
           sourceInstanceName: { eq: "art" }
-          name: { eq: "learn_yourself" }
+          name: { eq: "team_work" }
         ) {
           childImageSharp {
-            fluid(maxWidth: 760) {
-              ...GatsbyImageSharpFluid_withWebp_tracedSVG
-            }
-          }
-        }
-
-        art_ideas: file(
-          sourceInstanceName: { eq: "art" }
-          name: { eq: "ideas" }
-        ) {
-          childImageSharp {
-            fluid(maxWidth: 760) {
+            fluid(maxWidth: 1600) {
               ...GatsbyImageSharpFluid_withWebp_tracedSVG
             }
           }
@@ -44,98 +34,85 @@ const About = () => (
       }
     `}
     render={data => (
-      <Section id="about">
-        <Container>
-          <Grid>
-            <div>
-              <h2>Application Development</h2>
-              <p>
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat.
-              </p>
-            </div>
-            <Art>
-              <Img fluid={data.art_fast.childImageSharp.fluid} />
-            </Art>
-          </Grid>
-          <Grid inverse>
-            <Art>
-              <Img fluid={data.art_learn.childImageSharp.fluid} />
-            </Art>
-            <div>
-              <h2>Site Enhancements & Special Projects</h2>
-              <p>
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-            </div>
-          </Grid>
-          <Grid>
-            <div>
-              <h2>Analytics & Growth</h2>
-              <p>
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                <br />
-                <br />
-                "Lorem ipsum dolor sit amet
-              </p>
-            </div>
-            <Art>
-              <Img fluid={data.art_ideas.childImageSharp.fluid} />
-            </Art>
-          </Grid>
+      <Section id="about" accent="secondary">
+        <Container style={{ position: 'relative' }}>
+          <h1>About Us</h1>
+          <AboutContainer>
+            <p>
+              At Granada Labs, we are obsessed with creating beautiful, dynamic
+              software that solves your most pressing issues. We take the time
+              to understand your business, strategy, and goals to create digital
+              experiences that will delight your stakeholders.
+            </p>
+            <br />
+            <p>
+              We are hyper-focused on our customers and our Atlanta community.
+              We strive to create products that enrich our customers and the
+              community they serve.
+            </p>
+            <br />
+            <p>
+              We would love to talk with you about how we can work together to
+              create something special.
+            </p>
+            <br />
+          </AboutContainer>
+          <Art>
+            <Img fluid={data.art_team.childImageSharp.fluid} />
+          </Art>
+          <ArtMobile>
+            <Img fluid={data.art_team.childImageSharp.fluid} />
+          </ArtMobile>
         </Container>
       </Section>
     )}
   />
 );
 
-const Grid = styled.div`
-  display: grid;
-  grid-template-columns: 3fr 2fr;
-  grid-gap: 40px;
-  text-align: right;
-  align-items: center;
-  justify-items: center;
-  margin: 24px 0;
+const AboutContainer = styled.div`
+  width: 60%;
+  margin-top: 20px;
 
-  ${props =>
-    props.inverse &&
-    `
-    text-align: left;
-    grid-template-columns: 2fr 3fr;
-  `}
-
-  h2 {
-    margin-bottom: 16px;
+  @media (max-width: ${props => props.theme.screen.lg}) {
+    justify-content: start;
   }
 
   @media (max-width: ${props => props.theme.screen.md}) {
-    grid-template-columns: 1fr;
-    text-align: left;
-    margin-bottom: 96px;
+    width: 100%;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  }
 
-    &:last-child {
-      margin-bottom: 24px;
-    }
-
-    ${props =>
-      props.inverse &&
-      `
-        ${Art} {
-          order: 2;
-        }
-    `}
+  @media (max-width: ${props => props.theme.screen.xs}) {
+    grid-gap: 24px;
   }
 `;
 
 const Art = styled.figure`
-  margin: 0;
-  max-width: 380px;
+  width: 800px;
+  margin: -80px 0;
+  position: absolute;
+  top: 0;
+  left: 70%;
+
+  @media (max-width: ${props => props.theme.screen.lg}) {
+    top: 20%;
+  }
+
+  @media (max-width: ${props => props.theme.screen.md}) {
+    display: none;
+  }
+`;
+
+const ArtMobile = styled.figure`
   width: 100%;
+  margin: 0;
+  display: none;
+  margin-top: 64px;
+  margin-bottom: -60%;
+
+  @media (max-width: ${props => props.theme.screen.md}) {
+    display: block;
+  }
 `;
 
 export default About;
