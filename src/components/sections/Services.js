@@ -9,9 +9,9 @@ const Services = () => (
   <StaticQuery
     query={graphql`
       query {
-        art_fast: file(
+        art_robot: file(
           sourceInstanceName: { eq: "art" }
-          name: { eq: "fast" }
+          name: { eq: "robot" }
         ) {
           childImageSharp {
             fluid(maxWidth: 760) {
@@ -20,9 +20,9 @@ const Services = () => (
           }
         }
 
-        art_learn: file(
+        art_project: file(
           sourceInstanceName: { eq: "art" }
-          name: { eq: "learn_yourself" }
+          name: { eq: "startup" }
         ) {
           childImageSharp {
             fluid(maxWidth: 760) {
@@ -31,9 +31,9 @@ const Services = () => (
           }
         }
 
-        art_ideas: file(
+        art_data: file(
           sourceInstanceName: { eq: "art" }
-          name: { eq: "ideas" }
+          name: { eq: "data" }
         ) {
           childImageSharp {
             fluid(maxWidth: 760) {
@@ -46,7 +46,6 @@ const Services = () => (
     render={data => (
       <Section id="services">
         <Container>
-          <h1>Our Services</h1>
           <Grid>
             <div>
               <h2>Application Development</h2>
@@ -61,12 +60,12 @@ const Services = () => (
               </p>
             </div>
             <Art>
-              <Img fluid={data.art_fast.childImageSharp.fluid} />
+              <Img fluid={data.art_robot.childImageSharp.fluid} />
             </Art>
           </Grid>
           <Grid inverse>
             <Art>
-              <Img fluid={data.art_learn.childImageSharp.fluid} />
+              <Img fluid={data.art_project.childImageSharp.fluid} />
             </Art>
             <div>
               <h2>Site Enhancements & Special Projects</h2>
@@ -74,8 +73,8 @@ const Services = () => (
                 Does your site need a visual upgrade? How about creating an
                 in-house managed ordering platform? Maybe you just want to
                 improve your site’s performance or SEO? Whatever your existing
-                platform needs, we will work within your existing tech stack to
-                enhance, improve, or iterate on your current digital presence.
+                platform needs, we will work within your tech stack to enhance,
+                improve, or iterate on your current digital presence.
               </p>
               <br />
               <p>
@@ -88,15 +87,15 @@ const Services = () => (
             <div>
               <h2>Analytics & Growth</h2>
               <p>
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                <br />
-                <br />
-                "Lorem ipsum dolor sit amet
+                Harness the power of your data to turn impressions into
+                customers. We’ll help you develop a data analytics strategy to
+                improve your decision making with real-time access to your most
+                important metrics. We’ll get you the right insights to
+                prioritize new features that impact the bottom line.
               </p>
             </div>
             <Art>
-              <Img fluid={data.art_ideas.childImageSharp.fluid} />
+              <Img fluid={data.art_data.childImageSharp.fluid} />
             </Art>
           </Grid>
         </Container>

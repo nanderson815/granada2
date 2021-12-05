@@ -53,14 +53,17 @@ const Footer = () => (
           <StyledContainer>
             <Copyright>
               <h2>Granada Labs</h2>
+              <p>{`© ${new Date(
+                Date.now()
+              ).getFullYear()} Granada Labs. All Rights Reserved.`}</p>
             </Copyright>
-            <SocialIcons>
+            {/* <SocialIcons>
               {SOCIAL.map(({ icon, link }) => (
                 <ExternalLink key={link} href={link}>
                   <img src={icon} alt="link" />
                 </ExternalLink>
               ))}
-            </SocialIcons>
+            </SocialIcons> */}
           </StyledContainer>
         </FooterWrapper>
       </React.Fragment>
@@ -92,9 +95,9 @@ const Copyright = styled.div`
   ${props => props.theme.font_size.small};
   color: ${props => props.theme.color.black.regular};
 
-  a {
-    text-decoration: none;
-    color: inherit;
+  p {
+    font-size: 16px;
+    color: ${props => props.theme.color.black.regular};
   }
 `;
 

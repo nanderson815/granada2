@@ -9,21 +9,9 @@ const About = () => (
   <StaticQuery
     query={graphql`
       query {
-        allFile(filter: { sourceInstanceName: { eq: "team" } }) {
-          edges {
-            node {
-              relativePath
-              childImageSharp {
-                fluid(maxWidth: 400, maxHeight: 400) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-          }
-        }
-        art_team: file(
+        art_about: file(
           sourceInstanceName: { eq: "art" }
-          name: { eq: "team_work" }
+          name: { eq: "about" }
         ) {
           childImageSharp {
             fluid(maxWidth: 1600) {
@@ -58,10 +46,10 @@ const About = () => (
             <br />
           </AboutContainer>
           <Art>
-            <Img fluid={data.art_team.childImageSharp.fluid} />
+            <Img fluid={data.art_about.childImageSharp.fluid} />
           </Art>
           <ArtMobile>
-            <Img fluid={data.art_team.childImageSharp.fluid} />
+            <Img fluid={data.art_about.childImageSharp.fluid} />
           </ArtMobile>
         </Container>
       </Section>
